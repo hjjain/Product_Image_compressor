@@ -1,7 +1,26 @@
+
+# Virtual Environment
 venv/
+
+# Python Cache
 __pycache__/
+*.pyc
+*.pyo
+
+# Environment Variables
 .env
+
+# Database & Migrations
 *.sqlite3
-*.log
+dump.rdb
+migrations/
+
+# Processed Images (Optional)
 processed_images/
+
+# Logs
+*.log
+
+# CSV Test Files
+test.csv
 
