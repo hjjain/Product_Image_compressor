@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "0301272b-90a6-481a-bda4-6b673cd3d2f3",
+		"name": "product_csv_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41652449"
+	},
+	"item": [
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1eff36b7-7a1a-4ff0-94e4-10db8823dac3"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/upload/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"upload",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/status/{de7b859a-e72f-4a33-8121-6cefb3bf3ee5}/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"status",
+						"{de7b859a-e72f-4a33-8121-6cefb3bf3ee5}",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
