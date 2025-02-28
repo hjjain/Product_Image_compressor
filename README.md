@@ -131,4 +131,62 @@ You can import the Postman collection to test the APIs easily.
 | 500 Internal Server Error | Server encountered an issue |
 
 
+### **API DOCUMENTATION**
+
+📌 API Documentation - FastAPI Image Processing System
+1️. Overview
+This API processes images asynchronously from a CSV file containing image URLs and sends a webhook notification when processing is completed.
+2️. Base URL
+http://127.0.0.1:8000
+________________________________________
+3️. Endpoints
+🔹 1. Upload CSV File
+Endpoint:
+POST /upload/
+Description:
+Uploads a CSV file containing image URLs to process asynchronously.
+Request Parameters:
+Parameter	       Type	     Required	                    Description
+file	        File	         Yes	           CSV file with image URLs
+webhook_url	       String	          No	           Webhook URL for notifications
+
+Response:
+{
+  "request_id": "de7b859a-e72f-4a33-8121-6cefb3bf3ee5",
+  "message": "File uploaded successfully"
+}
+________________________________________
+2. Get Request Status
+Endpoint:
+GET /status/{request_id}
+Description:
+Fetches the current status of an image processing request.
+Path Parameter:
+Parameter	         Type	     	          Required	         Description
+request_id	         UUID		              Yes	     Request ID received from /upload/
+Response Example (Pending Status):
+{
+  "request_id": "de7b859a-e72f-4a33-8121-6cefb3bf3ee5",
+  "status": "pending",
+  "images": []
+}
+Response Example (Completed Status):
+{
+  "request_id": "de7b859a-e72f-4a33-8121-6cefb3bf3ee5",
+  "status": "completed",
+  "images": [
+   {
+      "input_url": "https://picsum.photos/200/300",
+      "output_url": "/processed_images/compressed_4224f8a2.jpg",
+      "status": "completed"
+    }
+  ]
+}
+
+### **ER DIAGRAM**
+
+![component_diagram drawio](https://github.com/user-attachments/assets/0fae3cf8-3508-4d53-9dbe-a4222cc41f8e)
+
+
+
 
